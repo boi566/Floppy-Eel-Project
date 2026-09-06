@@ -13,4 +13,6 @@ while not board.is_game_over():
                 board.push(s)
     except (chess.InvalidMoveError , ValueError):
         print("put your move in valid uci format, dingus")
+    except IndexError:
+        print("you/computer won")
 print(board)
