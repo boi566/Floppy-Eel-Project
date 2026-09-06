@@ -3,7 +3,7 @@ import chess
 import random
 board = chess.Board()
 while not board.is_game_over():
-    print(board)
+    print(f"\033[H\033[J{board}\n" , end = "")
     d = input("make your move: ")
     try:
         if chess.Move.from_uci(d) in board.legal_moves:
@@ -15,4 +15,3 @@ while not board.is_game_over():
         print("put your move in valid uci format, dingus")
     except IndexError:
         print("you/computer won")
-print(board)
