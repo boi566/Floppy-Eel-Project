@@ -15,3 +15,11 @@ while not board.is_game_over():
         print("put your move in valid uci format, dingus")
     except IndexError:
         print("you/computer won")
+b = board.outcome()
+if b:
+    print(b.termination)
+    print(b.result())
+    print(b.winner)
+    # True = white won , False = Black won
+else:
+    print("playing")
